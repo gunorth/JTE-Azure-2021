@@ -17,7 +17,7 @@ jobs:
       with:
         login-server: ${{ secrets.AZURE_ACR_LOGINSERVER }}
         username: ${{ secrets.AZURE_ACR_LOGIN }}
-        password: ${{ secrets.AZURE_ACR_PASSWORD }}
+        password: ${{ secrets.AZURE_ACR_CREDENTIALS }}
             
     - name: Build and Push the Docker image
       run: |

@@ -13,7 +13,7 @@ jobs:
   
      
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build .\WebAppDemo --file Dockerfile --tag my-image-name:$(date +%s)
     - name: 'Login in Azure ACR'
       uses: azure/docker-login@v1
       with:

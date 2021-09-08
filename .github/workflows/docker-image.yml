@@ -24,3 +24,16 @@ jobs:
             VERSION="$(date +%s)"
             docker build . --file WebAppDemo/Dockerfile -t ${{ secrets.AZURE_ACR_LOGINSERVER }}/sampleapp:$VERSION
             docker push ${{ secrets.AZURE_ACR_LOGINSERVER }}/sampleapp:$VERSION
+  DeploymentDev:
+    runs-on: ubuntu-latest
+    environment: Dev
+    steps:
+    - id: step1
+      run: echo "Deploiement en dev"
+  DeploymentQualif:
+    runs-on: ubuntu-latest
+    environment: Qualif
+    needs: [DeploymentDev]
+    steps:
+    - id: step1
+      run: echo "Deploiement en qualification"

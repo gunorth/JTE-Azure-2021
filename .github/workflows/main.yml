@@ -1,0 +1,22 @@
+name: PackageAndDeploy
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  DeploymentDev:
+    runs-on: ubuntu-latest
+    environment: Dev
+    if: github.event.label.name == 'deploy'
+    steps:
+    - id: step1
+      run: echo "Deploiement en dev"
+  DeploymentQualif:
+    runs-on: ubuntu-latest
+    environment: Qualif
+    if: github.event.label.name == 'deploy'
+    needs: [DeploymentDev]
+    steps:
+    - id: step1
+      run: echo "Deploiement en qualification"

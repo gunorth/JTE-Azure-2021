@@ -7,7 +7,7 @@ on:
 jobs:
 
   buildImageDocker:
-    runs-on: JTE_2021
+    runs-on: JTE-2021
     steps:
     - name: 'Code Checkout GitHub Action'
       uses: actions/checkout@v2

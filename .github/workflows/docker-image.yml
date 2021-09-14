@@ -3,7 +3,8 @@ name: Docker Image CI
 on:
   pull_request:
     branches: [ develop ]
-
+  workflow_dispatch:
+  
 jobs:
 
   buildImageDocker:
@@ -22,6 +23,6 @@ jobs:
             
     - name: Build and Push the Docker image
       run: |
-            VERSION="v1.1"
+            VERSION="v1.1_works_on_my_machine"
             docker build . --file WebAppDemo/Dockerfile -t ${{ secrets.AZURE_ACR_LOGINSERVER }}/welcomepage:$VERSION
             docker push ${{ secrets.AZURE_ACR_LOGINSERVER }}/welcomepage:$VERSION

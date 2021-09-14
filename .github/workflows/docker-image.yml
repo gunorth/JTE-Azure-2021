@@ -8,7 +8,7 @@ on:
 jobs:
 
   buildImageDocker:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: 'Code Checkout GitHub Action'
       uses: actions/checkout@v2

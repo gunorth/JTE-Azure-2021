@@ -23,6 +23,6 @@ jobs:
             
     - name: Build and Push the Docker image
       run: |
-            VERSION="v1.1_works_on_my_machine"
-            docker build . --file WebAppDemo/Dockerfile -t ${{ secrets.AZURE_ACR_LOGINSERVER }}/welcomepage:$VERSION
-            docker push ${{ secrets.AZURE_ACR_LOGINSERVER }}/welcomepage:$VERSION
+            
+            docker build . --file WebAppDemo/Dockerfile -t ${{ secrets.AZURE_ACR_LOGINSERVER }}/welcomepage:works_on_my_machine
+            docker push ${{ secrets.AZURE_ACR_LOGINSERVER }}/welcomepage:works_on_my_machine
